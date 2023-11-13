@@ -1,0 +1,12 @@
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\bin\Debug\net7.0\app.whitelabel.deps.json
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\bin\Debug\net7.0\app.whitelabel.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\bin\Debug\net7.0\app.whitelabel.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\obj\Debug\net7.0\app.whitelabel.csproj.AssemblyReference.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\obj\Debug\net7.0\app.whitelabel.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\obj\Debug\net7.0\app.whitelabel.AssemblyInfoInputs.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\obj\Debug\net7.0\app.whitelabel.AssemblyInfo.cs
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\obj\Debug\net7.0\app.whitelabel.csproj.CoreCompileInputs.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\obj\Debug\net7.0\app.whitelabel.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\obj\Debug\net7.0\refint\app.whitelabel.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\obj\Debug\net7.0\app.whitelabel.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel\obj\Debug\net7.0\ref\app.whitelabel.dll
