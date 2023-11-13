@@ -1,4 +1,6 @@
-﻿using app.whitelabel.data.DBConfiguration;
+﻿using app.whitelabel.application.Services;
+using app.whitelabel.application.Services.Interfaces;
+using app.whitelabel.data.DBConfiguration;
 using app.whitelabel.data.Repositories;
 using app.whitelabel.Repositories.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,10 +16,10 @@ namespace app.whitelabel.IoC
             service.AddScoped<IItemOrderRepository, ItemOrderRepository>();
             service.AddScoped<IOrderRepository, OrderRepository>();
 
-            //service.AddScoped<IPizzaServices, PizzaServices>();
-            //service.AddScoped<ICustomerServices, CustomerServices>();
-            //service.AddScoped<IItemOrderServices, ItemOrderServices>();
-            //service.AddScoped<IOrderServices, OrderServices>();
+            service.AddScoped<IPizzaServices, PizzaServices>();
+            service.AddScoped<ICustomerServices, CustomerServices>();
+            service.AddScoped<IItemOrderServices, ItemOrderServices>();
+            service.AddScoped<IOrderServices, OrderServices>();
 
             service.AddTransient<IAppDbContext, ApplicationContext>();
         }
