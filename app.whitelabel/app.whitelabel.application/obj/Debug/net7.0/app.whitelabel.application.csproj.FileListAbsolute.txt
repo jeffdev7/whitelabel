@@ -1,0 +1,17 @@
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\bin\Debug\net7.0\app.whitelabel.application.deps.json
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\bin\Debug\net7.0\app.whitelabel.application.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\bin\Debug\net7.0\app.whitelabel.application.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\bin\Debug\net7.0\app.whitelabel.data.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\bin\Debug\net7.0\app.whitelabel.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\bin\Debug\net7.0\app.whitelabel.data.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\bin\Debug\net7.0\app.whitelabel.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\app.whitelabel.application.csproj.AssemblyReference.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\app.whitelabel.application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\app.whitelabel.application.AssemblyInfoInputs.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\app.whitelabel.application.AssemblyInfo.cs
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\app.whitelabel.application.csproj.CoreCompileInputs.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\app.whitelabel.application.csproj.CopyComplete
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\app.whitelabel.application.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\refint\app.whitelabel.application.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\app.whitelabel.application.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.application\obj\Debug\net7.0\ref\app.whitelabel.application.dll

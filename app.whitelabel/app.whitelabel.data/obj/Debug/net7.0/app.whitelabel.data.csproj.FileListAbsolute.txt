@@ -1,0 +1,17 @@
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.data.deps.json
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.data.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.data.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.csproj.AssemblyReference.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.AssemblyInfoInputs.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.AssemblyInfo.cs
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.csproj.CoreCompileInputs.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.csproj.CopyComplete
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\refint\app.whitelabel.data.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\ref\app.whitelabel.data.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.data.runtimeconfig.json
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.genruntimeconfig.cache
