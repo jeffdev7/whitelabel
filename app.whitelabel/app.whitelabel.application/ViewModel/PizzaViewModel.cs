@@ -9,5 +9,6 @@ namespace app.whitelabel.application.ViewModel
         public Guid Id {get;set;}
         public EFlavour Flavour { get; set; }
         public decimal Price { get; set; }
+        public bool TwoFalours { get; set; } = false;
     }
 }

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "K59r1rsgCJhHJjwnuBRLYyOU8yg/6IG9aJL2CqcV5nI=",
+  "Source": "app.whitelabel.API",
+  "BasePath": "_content/app.whitelabel.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
