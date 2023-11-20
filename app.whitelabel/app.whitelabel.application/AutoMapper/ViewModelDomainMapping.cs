@@ -11,6 +11,7 @@ namespace app.whitelabel.application.AutoMapper
             CreateMap<PizzaViewModel, Pizza>();
             CreateMap<CustomerViewModel, Customer>();
             CreateMap<CustomerViewModel, Customer>();
+            CreateMap<CustomerViewModelList, Customer>();
             CreateMap<ItemOrderViewModel, ItemOrder>();
             CreateMap<OrderViewModel, Order>()
                 .ForMember(_ => _.Items, opt => opt
