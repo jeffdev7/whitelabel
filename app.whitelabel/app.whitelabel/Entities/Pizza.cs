@@ -6,13 +6,13 @@ namespace app.whitelabel.Entities
     {
         public EFlavour Flavour { get; set; }
         public decimal Price { get; set; }
-        public bool TwoFalours { get; set; }
+        public bool TwoFlavours { get; set; }
 
-        public Pizza(EFlavour flavour, decimal price, bool twoFalours)
+        public Pizza(EFlavour flavour, decimal price, bool twoFlavours)
         {
             Flavour = flavour;
             Price = price;
-            TwoFalours = twoFalours;
+            TwoFlavours = twoFlavours;
         }
         public Pizza(){}
     }

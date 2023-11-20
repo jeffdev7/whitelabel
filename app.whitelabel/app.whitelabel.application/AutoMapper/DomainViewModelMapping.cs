@@ -9,6 +9,7 @@ namespace app.whitelabel.application.AutoMapper
         public DomainViewModelMapping() 
         {
             CreateMap<Pizza, PizzaViewModel>();
+            CreateMap<Pizza, PizzaViewModelList>();
             CreateMap<Customer, CustomerViewModel>();
             CreateMap<Customer, CustomerViewModelList>();
             CreateMap<ItemOrder, ItemOrderViewModel>();
