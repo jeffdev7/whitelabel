@@ -16,7 +16,7 @@ namespace app.whitelabel.API.Controllers
         }
 
         [HttpGet("customers")]
-        public async Task<IEnumerable<CustomerViewModel>> GetAll()
+        public async Task<IEnumerable<CustomerViewModelList>> GetAll()
         {
             return _customerServices.GetCustomers();
         }
@@ -27,14 +27,6 @@ namespace app.whitelabel.API.Controllers
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var poll = await _customerServices.Add(vm);
             return Ok(poll);
-        }
-
-        [HttpPut("{id}")]
-        public async Task<ActionResult<CustomerViewModel>> Update([FromBody] CustomerViewModel vm)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            var user = await _customerServices.Update(vm);
-            return Ok(user);
         }
 
         [HttpDelete("{id}")]

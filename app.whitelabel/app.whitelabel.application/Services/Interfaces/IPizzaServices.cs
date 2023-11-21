@@ -8,6 +8,6 @@ namespace app.whitelabel.application.Services.Interfaces
         Task<PizzaViewModel> Update(PizzaViewModel vm);
         Task<PizzaViewModel> Add(PizzaViewModel vm);
         Task<bool> Remove(Guid id);
-        IEnumerable<PizzaViewModel> GetPizzas();
+        IEnumerable<PizzaViewModelList> GetPizzas();
     }
 }

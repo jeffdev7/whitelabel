@@ -9,8 +9,9 @@ namespace app.whitelabel.application.AutoMapper
         public ViewModelDomainMapping() 
         {
             CreateMap<PizzaViewModel, Pizza>();
+            CreateMap<PizzaViewModelList, Pizza>();
             CreateMap<CustomerViewModel, Customer>();
-            CreateMap<CustomerViewModel, Customer>();
+            CreateMap<CustomerViewModelList, Customer>();
             CreateMap<ItemOrderViewModel, ItemOrder>();
             CreateMap<OrderViewModel, Order>()
                 .ForMember(_ => _.Items, opt => opt

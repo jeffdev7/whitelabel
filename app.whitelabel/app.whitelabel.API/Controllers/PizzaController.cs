@@ -16,7 +16,7 @@ namespace app.whitelabel.API.Controllers
         }
 
         [HttpGet("pizzas")]
-        public IEnumerable<PizzaViewModel> GetAll()
+        public IEnumerable<PizzaViewModelList> GetAll()
         {
             return _pizzaServices.GetPizzas();
         }

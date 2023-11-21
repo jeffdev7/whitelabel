@@ -34,9 +34,9 @@ namespace app.whitelabel.application.Services
             return _mapper.Map<CustomerViewModel>(_customerRepository.GetById(id));
         }
 
-        public IEnumerable<CustomerViewModel> GetCustomers()
+        public IEnumerable<CustomerViewModelList> GetCustomers()
         {
-            return _mapper.Map<IEnumerable<CustomerViewModel>>(_customerRepository.GetCustomers());
+            return _mapper.Map<IEnumerable<CustomerViewModelList>>(_customerRepository.GetCustomers());
         }
 
         public async Task<bool> Remove(Guid id)

@@ -34,9 +34,9 @@ namespace app.whitelabel.application.Services
             return _mapper.Map<PizzaViewModel>(_pizzaRepository.GetById(id));
         }
 
-        public IEnumerable<PizzaViewModel> GetPizzas()
+        public IEnumerable<PizzaViewModelList> GetPizzas()
         {
-            return _mapper.Map<IEnumerable<PizzaViewModel>>(_pizzaRepository.GetPizzas());
+            return _mapper.Map<IEnumerable<PizzaViewModelList>>(_pizzaRepository.GetPizzas());
         }
 
         public async Task<bool> Remove(Guid id)

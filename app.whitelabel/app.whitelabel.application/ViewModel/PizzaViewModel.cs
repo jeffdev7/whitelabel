@@ -3,12 +3,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace app.whitelabel.application.ViewModel
 {
-    public class PizzaViewModel
+    public class PizzaViewModelList
     {
         [Key]
         public Guid Id {get;set;}
         public EFlavour Flavour { get; set; }
         public decimal Price { get; set; }
-        public bool TwoFalours { get; set; } = false;
+        public bool TwoFlavours { get; set; } = false;
+    }
+    public class PizzaViewModel
+    {
+        [Key]
+        public EFlavour Flavour { get; set; }
+        public decimal Price { get; set; }
+        public bool TwoFlavours { get; set; } = false;
     }
 }
