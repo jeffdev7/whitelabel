@@ -1,4 +1,5 @@
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.data.deps.json
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.data.runtimeconfig.json
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.data.dll
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.data.pdb
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.dll
@@ -12,6 +13,5 @@ E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.w
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.dll
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\refint\app.whitelabel.data.dll
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.pdb
-E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\ref\app.whitelabel.data.dll
-E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\bin\Debug\net7.0\app.whitelabel.data.runtimeconfig.json
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\app.whitelabel.data.genruntimeconfig.cache
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.data\obj\Debug\net7.0\ref\app.whitelabel.data.dll

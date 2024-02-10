@@ -12,8 +12,8 @@ using app.whitelabel.data.DBConfiguration;
 namespace app.whitelabel.data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20231114165230_first migration")]
-    partial class firstmigration
+    [Migration("20240208204623_02")]
+    partial class _02
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -265,20 +265,17 @@ namespace app.whitelabel.data.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<bool>("IsTwoFlavours")
+                        .HasColumnType("boolean");
+
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uuid");
 
                     b.Property<int>("Payment")
                         .HasColumnType("integer");
 
-                    b.Property<Guid>("PizzaId")
-                        .HasColumnType("uuid");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
-
-                    b.Property<decimal>("UnitPrice")
-                        .HasColumnType("numeric");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
@@ -286,8 +283,6 @@ namespace app.whitelabel.data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
-
-                    b.HasIndex("PizzaId");
 
                     b.ToTable("ItemOrders");
                 });
@@ -326,16 +321,18 @@ namespace app.whitelabel.data.Migrations
                     b.Property<int>("Flavour")
                         .HasColumnType("integer");
 
+                    b.Property<Guid?>("ItemOrderId")
+                        .HasColumnType("uuid");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
-
-                    b.Property<bool>("TwoFalours")
-                        .HasColumnType("boolean");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ItemOrderId");
 
                     b.ToTable("Pizzas");
                 });
@@ -399,15 +396,7 @@ namespace app.whitelabel.data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("app.whitelabel.Entities.Pizza", "Pizza")
-                        .WithMany()
-                        .HasForeignKey("PizzaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Order");
-
-                    b.Navigation("Pizza");
                 });
 
             modelBuilder.Entity("app.whitelabel.Entities.Order", b =>
@@ -421,9 +410,21 @@ namespace app.whitelabel.data.Migrations
                     b.Navigation("Customer");
                 });
 
+            modelBuilder.Entity("app.whitelabel.Entities.Pizza", b =>
+                {
+                    b.HasOne("app.whitelabel.Entities.ItemOrder", null)
+                        .WithMany("Pizzas")
+                        .HasForeignKey("ItemOrderId");
+                });
+
             modelBuilder.Entity("app.whitelabel.Entities.Customer", b =>
                 {
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("app.whitelabel.Entities.ItemOrder", b =>
+                {
+                    b.Navigation("Pizzas");
                 });
 
             modelBuilder.Entity("app.whitelabel.Entities.Order", b =>

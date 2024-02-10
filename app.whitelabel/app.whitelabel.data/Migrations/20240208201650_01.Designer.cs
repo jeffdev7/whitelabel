@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using app.whitelabel.data.DBConfiguration;
@@ -11,9 +12,11 @@ using app.whitelabel.data.DBConfiguration;
 namespace app.whitelabel.data.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20240208201650_01")]
+    partial class _01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -271,6 +274,9 @@ namespace app.whitelabel.data.Migrations
                     b.Property<int>("Payment")
                         .HasColumnType("integer");
 
+                    b.Property<Guid>("PizzaId")
+                        .HasColumnType("uuid");
+
                     b.Property<int>("Quantity")
                         .HasColumnType("integer");
 
@@ -280,6 +286,8 @@ namespace app.whitelabel.data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
+
+                    b.HasIndex("PizzaId");
 
                     b.ToTable("ItemOrders");
                 });
@@ -318,9 +326,6 @@ namespace app.whitelabel.data.Migrations
                     b.Property<int>("Flavour")
                         .HasColumnType("integer");
 
-                    b.Property<Guid?>("ItemOrderId")
-                        .HasColumnType("uuid");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
@@ -328,8 +333,6 @@ namespace app.whitelabel.data.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ItemOrderId");
 
                     b.ToTable("Pizzas");
                 });
@@ -393,7 +396,15 @@ namespace app.whitelabel.data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("app.whitelabel.Entities.Pizza", "Pizza")
+                        .WithMany()
+                        .HasForeignKey("PizzaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Order");
+
+                    b.Navigation("Pizza");
                 });
 
             modelBuilder.Entity("app.whitelabel.Entities.Order", b =>
@@ -407,21 +418,9 @@ namespace app.whitelabel.data.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("app.whitelabel.Entities.Pizza", b =>
-                {
-                    b.HasOne("app.whitelabel.Entities.ItemOrder", null)
-                        .WithMany("Pizzas")
-                        .HasForeignKey("ItemOrderId");
-                });
-
             modelBuilder.Entity("app.whitelabel.Entities.Customer", b =>
                 {
                     b.Navigation("Orders");
-                });
-
-            modelBuilder.Entity("app.whitelabel.Entities.ItemOrder", b =>
-                {
-                    b.Navigation("Pizzas");
                 });
 
             modelBuilder.Entity("app.whitelabel.Entities.Order", b =>

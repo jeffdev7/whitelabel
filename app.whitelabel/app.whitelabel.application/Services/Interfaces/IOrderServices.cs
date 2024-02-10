@@ -9,5 +9,6 @@ namespace app.whitelabel.application.Services.Interfaces
         Task<OrderViewModel> Add(OrderViewModel vm);
         Task<bool> Remove(Guid id);
         IEnumerable<OrderListViewModel> GetOrders();
+        //void CreateOrder(OrderViewModel orders);
     }
 }

@@ -41,7 +41,7 @@ namespace app.whitelabel.data.DBConfiguration
             builder.Entity<ItemOrder>()
                 .HasOne(_ => _.Order);
             builder.Entity<ItemOrder>()
-                .HasOne(_ => _.Pizza);
+                 .HasMany(_ => _.Pizzas);
 
             base.OnModelCreating(builder);
         }

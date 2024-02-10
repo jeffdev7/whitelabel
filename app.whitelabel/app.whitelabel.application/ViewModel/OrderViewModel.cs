@@ -1,5 +1,4 @@
-﻿using app.whitelabel.Entities.Enum;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace app.whitelabel.application.ViewModel
 {

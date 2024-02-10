@@ -2,6 +2,7 @@
 using app.whitelabel.application.ViewModel;
 using app.whitelabel.data.DBConfiguration;
 using app.whitelabel.Entities;
+using app.whitelabel.Entities.Enum;
 using app.whitelabel.Repositories.Interfaces;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
@@ -14,19 +15,23 @@ namespace app.whitelabel.application.Services
         private readonly IOrderRepository _orderRepository;
         private readonly IItemOrderRepository _itemOrderRepository;
         private readonly ApplicationContext _context;
+        private readonly IPizzaRepository _pizzaRepository;
 
-        public OrderServices(IMapper mapper, IOrderRepository orderRepository, ApplicationContext context, 
-            IItemOrderRepository itemOrderRepository)
+        public OrderServices(IMapper mapper, IOrderRepository orderRepository,
+            ApplicationContext context,
+            IItemOrderRepository itemOrderRepository, IPizzaRepository pizzaRepository)
         {
             _mapper = mapper;
             _orderRepository = orderRepository;
             _context = context;
             _itemOrderRepository = itemOrderRepository;
+            _pizzaRepository = pizzaRepository;
         }
 
         public async Task<OrderViewModel> Add(OrderViewModel vm)
         {
             Order order = _mapper.Map<Order>(vm);
+
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
             return _mapper.Map<OrderViewModel>(order);
@@ -47,9 +52,12 @@ namespace app.whitelabel.application.Services
                     .Where(io => io.OrderId == pedido.Id)
                     .Select(io => new ItemOrderViewModel
                     {
-                        PizzaId = io.PizzaId,
+                        Id = io.OrderId,
+                        IsTwoFlavours = io.IsTwoFlavours,
+                        Pizzas = io.Pizzas,
                         Quantity = io.Quantity,
-                        UnitPrice = io.UnitPrice,
+                        Payment = io.Payment,
+                        Subtotal = io.Subtotal,
 
                     }).ToList();
 
@@ -91,6 +99,41 @@ namespace app.whitelabel.application.Services
         public void Dispose()
         {
             GC.SuppressFinalize(this);
+        }
+
+        //public void CreateOrder(OrderViewModel orderRequest)
+        //{
+        //    var order = new Order
+        //    {
+        //        CustomerId = orderRequest.CustomerId,
+        //        Items = new List<ItemOrder>()
+        //    };
+
+        //    // Process each item in the request
+        //    foreach (var itemRequest in orderRequest.Items)
+        //    {
+        //        var pizza = _pizzaRepository.GetById(itemRequest.Pizzas);
+
+        //        var itemOrder = new ItemOrder
+        //        {
+        //            PizzaId = itemRequest.PizzaId,
+        //            Quantity = itemRequest.Quantity,
+        //            UnitPrice = itemRequest.UnitPrice,
+        //            Payment = itemRequest.Payment,
+        //            IsTwoFlavours = itemRequest.IsTwoFlavours,
+        //            Pizza = pizza
+        //        };
+
+
+
+        //        order.Items.Add(itemOrder);
+        //    }
+        //}
+
+        private decimal CalculateTwoFlavorsPrice(Pizza pizza, List<EFlavour> flavours)
+        {
+            var t = (pizza.Price / 2) + (pizza.Price / 2);
+            return t;
         }
     }
 }
