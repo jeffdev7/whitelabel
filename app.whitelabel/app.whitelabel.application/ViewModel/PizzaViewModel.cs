@@ -6,16 +6,14 @@ namespace app.whitelabel.application.ViewModel
     public class PizzaViewModelList
     {
         [Key]
-        public Guid Id {get;set;}
+        public Guid Id { get; set; }
         public EFlavour Flavour { get; set; }
         public decimal Price { get; set; }
-        public bool TwoFlavours { get; set; } = false;
     }
     public class PizzaViewModel
     {
         [Key]
         public EFlavour Flavour { get; set; }
         public decimal Price { get; set; }
-        public bool TwoFlavours { get; set; } = false;
     }
 }

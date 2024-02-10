@@ -4,7 +4,6 @@ using app.whitelabel.data.DBConfiguration;
 using app.whitelabel.Entities;
 using app.whitelabel.Repositories.Interfaces;
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
 
 namespace app.whitelabel.application.Services
 {
@@ -37,19 +36,6 @@ namespace app.whitelabel.application.Services
         public IEnumerable<CustomerViewModelList> GetCustomers()
         {
             return _mapper.Map<IEnumerable<CustomerViewModelList>>(_customerRepository.GetCustomers());
-        }
-
-        public async Task<bool> Remove(Guid id)
-        {
-            Customer? beverage = await _context.Customers
-               .Where(p => p.Id == id).SingleOrDefaultAsync();
-
-            if (beverage == null)
-                return false;
-
-            _context.Customers.Remove(beverage);
-            await _context.SaveChangesAsync();
-            return true;
         }
 
         public async Task<CustomerViewModel> Update(CustomerViewModel vm)

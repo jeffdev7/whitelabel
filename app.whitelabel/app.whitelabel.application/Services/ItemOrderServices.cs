@@ -1,10 +1,13 @@
 ﻿using app.whitelabel.application.Services.Interfaces;
 using app.whitelabel.application.ViewModel;
 using app.whitelabel.data.DBConfiguration;
-using app.whitelabel.Entities;
+using app.whitelabel.Entities.Enum;
 using app.whitelabel.Repositories.Interfaces;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
+using System.Reflection;
+using System.Text.Json;
 
 namespace app.whitelabel.application.Services
 {
@@ -21,43 +24,47 @@ namespace app.whitelabel.application.Services
             _context = context;
         }
 
-        public async Task<ItemOrderViewModel> Add(ItemOrderViewModel vm)
-        {
-            ItemOrder item = _mapper.Map<ItemOrder>(vm);
-            _context.ItemOrders.Add(item);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<ItemOrderViewModel>(item);
-        }
-
         public ItemOrderViewModel GetById(Guid id)
         {
             return _mapper.Map<ItemOrderViewModel>(_itemRepository.GetById(id));
         }
-
-        public IEnumerable<ItemOrderViewModel> GetItemOrders()
+        public string GetPizzaOrders()
         {
-            return _mapper.Map<IEnumerable<ItemOrderViewModel>>(_itemRepository.GetItemOrders());
+            var orders = _itemRepository.GetAll().Include(_ => _.Pizzas).ToList();
+            var pollViewModels = orders.Select(pizza => new PizzaOrderViewModel
+            {
+                Id = pizza.Id,
+                IsTwoFlavours = pizza.IsTwoFlavours,
+                Subtotal = pizza.Subtotal,
+                Payment = pizza.Payment,
+                Quantity = pizza.Quantity,
+                Flavours = pizza.Pizzas.Select(
+                    _ => GetFlavourDescription(_.Flavour)).ToList(),
+
+            }).ToList();
+
+            var jsonOptions = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            var json = JsonSerializer.Serialize(pollViewModels, jsonOptions);
+            return json;
         }
 
-        public async Task<bool> Remove(Guid id)
+        private string GetFlavourDescription(EFlavour flavour)
         {
-            ItemOrder? beverage = await _context.ItemOrders
-               .Where(p => p.Id == id).SingleOrDefaultAsync();
-
-            if (beverage == null)
-                return false;
-
-            _context.ItemOrders.Remove(beverage);
-            await _context.SaveChangesAsync();
-            return true;
-        }
-
-        public async Task<ItemOrderViewModel> Update(ItemOrderViewModel vm)
-        {
-            ItemOrder beverage = _mapper.Map<ItemOrder>(vm);
-            _context.ItemOrders.Update(beverage);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<ItemOrderViewModel>(beverage);
+            var memberInfo = typeof(EFlavour).GetMember(flavour.ToString());
+            if (memberInfo.Length > 0)
+            {
+                var descriptionAttribute = memberInfo[0]
+                    .GetCustomAttribute<DescriptionAttribute>();
+                if (descriptionAttribute != null)
+                {
+                    return descriptionAttribute.Description;
+                }
+            }
+            return flavour.ToString();
         }
         public void Dispose()
         {

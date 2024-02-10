@@ -1,8 +1,10 @@
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.IoC.deps.json
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.IoC.dll
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.IoC.pdb
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.application.dll
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.data.dll
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.dll
+E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.application.pdb
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.data.pdb
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.pdb
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\obj\Debug\net7.0\app.whitelabel.IoC.csproj.AssemblyReference.cache
@@ -15,5 +17,3 @@ E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\obj\Debug\net7.0\app.wh
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\obj\Debug\net7.0\refint\app.whitelabel.IoC.dll
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\obj\Debug\net7.0\app.whitelabel.IoC.pdb
 E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\obj\Debug\net7.0\ref\app.whitelabel.IoC.dll
-E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.application.dll
-E:\Projects\whitelabel\app.whitelabel\app.whitelabel.IoC\bin\Debug\net7.0\app.whitelabel.application.pdb

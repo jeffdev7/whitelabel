@@ -9,10 +9,5 @@ namespace app.whitelabel.data.Repositories
         public ItemOrderRepository(ApplicationContext context) : base(context)
         {
         }
-
-        public IQueryable<ItemOrder> GetItemOrders()
-        {
-            return _context.ItemOrders;
-        }
     }
 }

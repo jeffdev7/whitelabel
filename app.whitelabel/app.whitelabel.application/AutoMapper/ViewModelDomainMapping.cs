@@ -6,7 +6,7 @@ namespace app.whitelabel.application.AutoMapper
 {
     public sealed class ViewModelDomainMapping : Profile
     {
-        public ViewModelDomainMapping() 
+        public ViewModelDomainMapping()
         {
             CreateMap<PizzaViewModel, Pizza>();
             CreateMap<PizzaViewModelList, Pizza>();
@@ -15,7 +15,7 @@ namespace app.whitelabel.application.AutoMapper
             CreateMap<ItemOrderViewModel, ItemOrder>();
             CreateMap<OrderViewModel, Order>()
                 .ForMember(_ => _.Items, opt => opt
-                .MapFrom(src => src.Items));            
+                .MapFrom(src => src.Items));
         }
     }
 }

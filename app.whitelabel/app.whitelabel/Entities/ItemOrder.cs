@@ -4,25 +4,43 @@ namespace app.whitelabel.Entities
 {
     public class ItemOrder : BaseEntity
     {
-        public virtual Pizza Pizza { get; set; }
-        public Guid PizzaId { get; set; }
+        public List<Pizza> Pizzas { get; set; }
         public virtual Order Order { get; set; }
         public Guid OrderId { get; set; }
         public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
-        public decimal Subtotal => Quantity * UnitPrice;
         public EPayment Payment { get; set; }
-
-        public ItemOrder(Pizza pizza, Guid pizzaId, Order order, Guid orderId, int quantity, decimal unitPrice, EPayment payment)
+        public bool IsTwoFlavours { get; set; } = false;
+        public decimal Subtotal
         {
-            Pizza = pizza;
-            PizzaId = pizzaId;
+            get
+            {
+                if (Pizzas != null && Pizzas.Count > 0 && Pizzas[0] != null)
+                {
+                    if (IsTwoFlavours == true && Pizzas.Count > 1 && Pizzas.Count == 2 && Pizzas[0] != null)
+                    {
+                        return (Pizzas[0].Price / 2) + (Pizzas[1].Price / 2) * Quantity;
+                    }
+                    else
+                        return (decimal)(Quantity * Pizzas[0].Price);
+
+                }
+                else
+                    return 0;
+
+            }
+        }
+
+        public ItemOrder(List<Pizza> pizzas, Order order, Guid orderId,
+            int quantity, EPayment payment, bool isTwoFlavours)
+        {
+            Pizzas = pizzas;
             Order = order;
             OrderId = orderId;
             Quantity = quantity;
-            UnitPrice = unitPrice;
             Payment = payment;
+            IsTwoFlavours = isTwoFlavours;
         }
-        public ItemOrder() {}
+
+        public ItemOrder() { }
     }
 }

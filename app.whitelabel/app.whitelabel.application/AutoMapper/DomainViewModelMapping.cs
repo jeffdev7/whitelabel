@@ -6,7 +6,7 @@ namespace app.whitelabel.application.AutoMapper
 {
     public sealed class DomainViewModelMapping : Profile
     {
-        public DomainViewModelMapping() 
+        public DomainViewModelMapping()
         {
             CreateMap<Pizza, PizzaViewModel>();
             CreateMap<Pizza, PizzaViewModelList>();

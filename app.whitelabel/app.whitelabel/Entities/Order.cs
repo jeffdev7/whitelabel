@@ -12,6 +12,6 @@
             CustomerId = customerId;
             Items = items;
         }
-        public Order(){}
+        public Order() { }
     }
 }
