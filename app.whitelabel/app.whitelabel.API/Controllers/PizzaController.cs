@@ -29,12 +29,12 @@ namespace app.whitelabel.API.Controllers
             return Ok(status);
         }
 
-        [HttpPost("add-pizza")]
-        public async Task<ActionResult<PizzaViewModel>> Add([FromBody] PizzaViewModel vm)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
-            var poll = await _pizzaServices.Add(vm);
-            return Ok(poll);
-        }
+        //[HttpPost("add-pizza")]
+        //public async Task<ActionResult<PizzaViewModel>> Add([FromBody] PizzaViewModel vm)
+        //{
+        //    if (!ModelState.IsValid) return BadRequest(ModelState);
+        //    var poll = await _pizzaServices.Add(vm);
+        //    return Ok(poll);
+        //}
     }
 }
