@@ -37,14 +37,6 @@ namespace app.whitelabel.application.Services
         {
             return _mapper.Map<IEnumerable<CustomerViewModelList>>(_customerRepository.GetCustomers());
         }
-
-        public async Task<CustomerViewModel> Update(CustomerViewModel vm)
-        {
-            Customer beverage = _mapper.Map<Customer>(vm);
-            _context.Customers.Update(beverage);
-            await _context.SaveChangesAsync();
-            return _mapper.Map<CustomerViewModel>(beverage);
-        }
         public void Dispose()
         {
             GC.SuppressFinalize(this);

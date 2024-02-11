@@ -28,13 +28,5 @@ namespace app.whitelabel.API.Controllers
             var poll = await _orderServices.Add(vm);
             return Ok(poll);
         }
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(Guid id)
-        {
-            var status = await _orderServices.Remove(id);
-            if (!status) return BadRequest();
-            return Ok(status);
-        }
     }
 }

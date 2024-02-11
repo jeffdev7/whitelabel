@@ -36,7 +36,7 @@ namespace app.whitelabel.application.Services
                 Id = pizza.Id,
                 IsTwoFlavours = pizza.IsTwoFlavours,
                 Subtotal = pizza.Subtotal,
-                Payment = pizza.Payment,
+                Payment = GetPaymentMethodDescription(pizza.Payment),
                 Quantity = pizza.Quantity,
                 Flavours = pizza.Pizzas.Select(
                     _ => GetFlavourDescription(_.Flavour)).ToList(),
@@ -65,6 +65,21 @@ namespace app.whitelabel.application.Services
                 }
             }
             return flavour.ToString();
+        }
+
+        private string GetPaymentMethodDescription(EPayment payment)
+        {
+            var memberInfo = typeof(EPayment).GetMember(payment.ToString());
+            if (memberInfo.Length > 0)
+            {
+                var descriptionAttribute = memberInfo[0]
+                    .GetCustomAttribute<DescriptionAttribute>();
+                if (descriptionAttribute != null)
+                {
+                    return descriptionAttribute.Description;
+                }
+            }
+            return payment.ToString();
         }
         public void Dispose()
         {

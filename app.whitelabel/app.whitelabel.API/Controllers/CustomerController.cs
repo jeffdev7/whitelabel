@@ -16,7 +16,7 @@ namespace app.whitelabel.API.Controllers
         }
 
         [HttpGet("customers")]
-        public async Task<IEnumerable<CustomerViewModelList>> GetAll()
+        public IEnumerable<CustomerViewModelList> GetAll()
         {
             return _customerServices.GetCustomers();
         }
